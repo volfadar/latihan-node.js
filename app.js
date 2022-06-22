@@ -4,4 +4,7 @@ fs.mkdirSync('text');
 
 fs.writeFileSync('./text/bambang.txt', 'yess');
 
-console.log(fs.readFileSync('./text/bambang.txt', 'utf-8'));
+fs.readFile('./text/bambang.txt', 'utf-8', (e, data) => {
+  if (e) throw e;
+  console.log(data);
+});
